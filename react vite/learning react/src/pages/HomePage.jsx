@@ -8,13 +8,13 @@ import ButtonGroup from "../components/ButtonGroup.jsx"
 import { useState } from "react";
 
 function HomePage({ addToCart, addToWishlist }) {
-   const [query, setQuery] = useState("");
+     const [searchQuery, setSearchQuery] = useState("");
     return (
         <div>
             <Navbar/>
-            <ProductsHeader query={query} onSearchChange={setQuery}/>
-            <CategoryButtons/>
-      <ProductGrid addToCart={addToCart} addToWishlist={addToWishlist}/>        
+    <ProductsHeader searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+              <CategoryButtons/>
+      <ProductGrid searchQuery={searchQuery} addToCart={addToCart} addToWishlist={addToWishlist}/>        
           <ButtonGroup/>
             <Footer/>
 

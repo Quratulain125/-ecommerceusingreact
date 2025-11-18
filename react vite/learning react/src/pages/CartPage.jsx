@@ -7,9 +7,7 @@ function CartPage({ cartItems, removeFromCart, changeQuantity }) {
     return (
         <div>
             <Navbar/>
-            <Cart cartItems={cartItems}
-      removeFromCart={removeFromCart}
-      changeQuantity={changeQuantity}/>
+            <Cart />
             <Footer/>
 
         </div>

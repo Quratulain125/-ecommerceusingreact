@@ -12,6 +12,10 @@ import DashboardPage from './pages/DashboardPage.jsx';
 import AddProductPage from './pages/AddProductPage.jsx';
 import ViewProductPage from './pages/ViewProductPage.jsx';
 import { ProductProvider } from "./context/ProductContext";
+import { CartProvider } from "./context/CartContext";
+import { WishlistProvider } from "./context/WishlistContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -65,6 +69,9 @@ function App() {
 
   return (
     <ProductProvider>
+      <CartProvider>
+         <WishlistProvider>
+          <ToastContainer position="top-center" autoClose={1500} />
     <Router>
       <Routes>
         <Route
@@ -106,6 +113,8 @@ function App() {
         />
       </Routes>
     </Router>
+    </WishlistProvider>
+    </CartProvider>
     </ProductProvider>
   );
 }

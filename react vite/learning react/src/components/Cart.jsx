@@ -1,9 +1,10 @@
 import React from "react";
 import CheckoutPage from "../pages/CheckoutPage";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
-function Cart({ cartItems = [], removeFromCart = () => {}, changeQuantity = () => {} }) {
-  const total = (cartItems || []).reduce((acc, it) => acc + (Number(it.price) || 0) * (it.quantity || 1), 0);
+function Cart() {
+   const { cartItems, removeFromCart, changeQuantity, total } = useCart();
  const navigate = useNavigate();
 
   const handleCheckout = () => {
